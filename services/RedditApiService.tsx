@@ -25,7 +25,7 @@ export const getBestAsync = async (): Promise<ApiResponse<Post[]>> => {
           title: x.data.title,
           body: x.data.selftext,
           link: x.data.url,
-          type: x.data.posthint,
+          type: x.data.post_hint,
         };
       });
       return successfulResponse(result);
