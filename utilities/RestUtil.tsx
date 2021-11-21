@@ -3,26 +3,19 @@ interface MyResponse {
   response: Response;
 }
 
-export const getAsync = async (path: string) => {
-  const result = await request(path, 'GET');
-  return result;
-};
+export function getAsync(path: string) {
+  return request(path, 'GET');
+}
 
-export const postAsync = async (path: string, body: string) => {
-  const result = await request(path, 'POST', body);
-  return result;
-};
+export function postAsync(path: string, body: string) {
+  return request(path, 'POST', body);
+}
 
-export const deleteAsync = async (path: string, body: string) => {
-  const result = await request(path, 'DELETE', body);
-  return result;
-};
+export function deleteAsync(path: string, body: string) {
+  return request(path, 'DELETE', body);
+}
 
-export const request = async (
-  path: string,
-  method: string,
-  body: string = '',
-) => {
+export async function request(path: string, method: string, body: string = '') {
   try {
     const data = await fetch(path, {
       method,
@@ -36,15 +29,12 @@ export const request = async (
   } catch (e) {
     throw e;
   }
-};
+}
 
-export const handleResponse = async (
-  response: Response,
-): Promise<MyResponse> => {
+export async function handleResponse(response: Response): Promise<MyResponse> {
   let json = {};
   try {
-    const jsonResponse = await response.text();
-    json = JSON.parse(jsonResponse);
+    json = JSON.parse(await response.text());
   } catch (e) {
     json = {};
   }
@@ -63,4 +53,4 @@ export const handleResponse = async (
   };
 
   throw error;
-};
+}

@@ -16,7 +16,7 @@ export interface Post {
   type: string;
 }
 
-export const getBestAsync = async (): Promise<ApiResponse<Post[]>> => {
+export async function getBestAsync(): Promise<ApiResponse<Post[]>> {
   try {
     const response = await getAsync('https://reddit.com/best.json');
     if (response.json) {
@@ -32,4 +32,4 @@ export const getBestAsync = async (): Promise<ApiResponse<Post[]>> => {
     }
   } catch {}
   return errorResponse(REDDIT_ERROR_CODES.UNKNOWN);
-};
+}

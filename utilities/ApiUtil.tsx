@@ -12,17 +12,17 @@ export interface ApiResponse<T> {
   error?: ApiErrorResponse;
 }
 
-export const successfulResponse = <T extends any>(data: T): ApiResponse<T> => {
+export function successfulResponse<T extends any>(data: T): ApiResponse<T> {
   return {
     success: true,
     data,
   };
-};
+}
 
-export const errorResponse = <T extends any>(
+export function errorResponse<T extends any>(
   errorCode: string,
   data: any = null,
-): ApiResponse<T> => {
+): ApiResponse<T> {
   return {
     success: false,
     error: {
@@ -30,4 +30,4 @@ export const errorResponse = <T extends any>(
       data: data,
     },
   };
-};
+}
