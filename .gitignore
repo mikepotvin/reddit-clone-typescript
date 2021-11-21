@@ -1,0 +1,37 @@
+.DS_Store
+node_modules/
+.vscode-test/
+coverage/
+.idea
+out
+src/**/nodeDebugLocation.json
+nls.*.json
+test/*.xml
+test/resources/projects/*
+
+# Compiled files
+dist/**
+!src/extension/appcenter/lib/**/*.js
+test/**/*.js
+!test/**/.eslintrc.js
+test/smoke/vscode
+!gulpfile.js
+SmokeTestLogs
+VSCodeUserData
+**/*.js.map
+vscode-react-native-*.vsix
+
+# Sample Application auto-generated files
+SampleApplication/.vscode/.react/debuggerWorker.js
+SampleApplication/.vscode/.react/index.android.bundle
+SampleApplication/.vscode/.react/index.android.map
+SampleApplication/.vscode/.react/.vscode/launchReactNative.js
+SampleApplication/android/
+SampleApplication/ios/
+SampleApplication/.flowconfig
+SampleApplication/.gitignore
+SampleApplication/.watchmanconfig
+SampleApplication/.vscode/launchReactNative.js
+SampleApplication/.vscode/settings.json
+SampleApplication/tsconfig.json
+SampleApplication/.vscode/typings/
